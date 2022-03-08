@@ -1,0 +1,51 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/AlexH/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/10.2.0.jre8/mssql-jdbc-10.2.0.jre8.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/AlexH/Documents/GitHub/patientportal/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/AlexH/Documents/GitHub/patientportal/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'patientportal 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/AlexH/Documents/GitHub/patientportal/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'patientportal 1.0-SNAPSHOT API'
+com.groupfour.patientportal
+'C:/Users/AlexH/Documents/GitHub/patientportal/src/main/java/com/groupfour/patientportal/Main.java'
+'C:/Users/AlexH/Documents/GitHub/patientportal/src/main/java/com/groupfour/patientportal/test.java'
+'C:/Users/AlexH/Documents/GitHub/patientportal/src/main/java/com/groupfour/patientportal/test2.java'
+C:\Users\AlexH\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\10.2.0.jre8\mssql-jdbc-10.2.0.jre8.jar = 1646769901647
+C:\Users\AlexH\Documents\GitHub\patientportal\src\main\java = 1646761381137
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\allclasses-index.html = 1646769916840
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\allpackages-index.html = 1646769916842
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\element-list = 1646769916783
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\help-doc.html = 1646769916864
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\index-all.html = 1646769916856
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\index.html = 1646769916859
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\jquery-ui.overrides.css = 1646769916899
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\member-search-index.js = 1646769916846
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\module-search-index.js = 1646769916843
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\overview-tree.html = 1646769916817
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\package-search-index.js = 1646769916843
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\script.js = 1646769916867
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\search.js = 1646769916870
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\stylesheet.css = 1646769916866
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\tag-search-index.js = 1646769916847
+C:\Users\AlexH\Documents\GitHub\patientportal\target\apidocs\type-search-index.js = 1646769916845
