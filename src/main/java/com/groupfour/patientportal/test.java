@@ -6,8 +6,7 @@
 package com.groupfour.patientportal;
 
 /**
- *
- * @author Alexander
+ * @author Christopher
  */
 public class test {
     //
