@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.groupfour.patientportal","l":"Main"},{"p":"com.groupfour.patientportal","l":"test"},{"p":"com.groupfour.patientportal","l":"test2"}];updateSearchResults();
