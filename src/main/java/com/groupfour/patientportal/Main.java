@@ -18,29 +18,10 @@ package com.groupfour.patientportal;
  */
         
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
+
 import java.sql.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
 /**
@@ -58,8 +39,8 @@ public class Main {
         System.out.println("\t ----------------------");
         System.out.println("\t1 - View Patient Personal Information");
         System.out.println("\t2 - View Doctor Personal Information");
-        System.out.println("\t3 - Insert/Update Patient Personal Information");
-        System.out.println("\t4 - Insert/Update Doctor Personal Information");
+        System.out.println("\t3 - Insert Patient Personal Information");
+        System.out.println("\t4 - Insert Doctor Personal Information");
         System.out.println("\t5 - Quit the Menu");
         System.out.println("Enter your choice: ");
         int choice = scan.nextInt();
@@ -214,32 +195,9 @@ public class Main {
     }
     }
   //  }
-    private static void printData(String username, String password) throws ClassNotFoundException, SQLException {
-     Connection con = null;
-     //PreparedStatement ps = null;
-    // ResultSet rs = null;
-     String user = "pportal";
-     String pwd = "admin";
-     String query = "SELECT * FROM DOCTOR WHERE username = pportal AND password = admin";
-     try{
-         con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-         PreparedStatement ps = con.prepareStatement(query);
-         
 
-         Statement st = con.createStatement();
-         ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
-         while (rs.next()) {
-             System.out.println(rs.getString("DoctorID"));
-         }
-    } catch (Exception e) {
-        System.out.println("An error occurred");
-         //if (rs != null)
-           //  rs.close();
-         //ps.close();
-         //con.close();
-     }
 
-                    }
+                    
                     
                     }
         
