@@ -1,32 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Patient Portal Capstone Project
+ * BCS 430W - 
+ * @Authors: Alexander Harmaty, Yasin Khan, Brian Noss, 
+ * Christopher Scheer, Angela Todaro
  */
 package com.groupfour.patientportal;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-/**
- *
- * @author Angie
- */
-        
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
-import java.sql.*;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -35,18 +13,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
-
-/**
- *
- * @author Angie
- */
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException { 
         
@@ -150,9 +116,9 @@ public class Main {
                             System.out.println(rs.getString("Specialty"));
 
                             //displays data. there must be a simpler way to implement
-                        }
+                        } // End of While Statement
                         
-                    }
+                    } // End of Try Statement
                     catch (Exception e) {
                     }
 //                        try {
@@ -209,10 +175,6 @@ public class Main {
                 st.setString(7, insurance);
                 
                 st.executeUpdate();
-                
-                
-            
-            
             
           //test
            System.out.println("Database updated successfully.");
@@ -255,12 +217,7 @@ public class Main {
                 st.setString(7, specialty);
                 
                 st.executeUpdate();
-                
-                
-            
-            
-            
-          
+
            System.out.println("Database updated successfully.");
            break;
            
@@ -269,11 +226,10 @@ public class Main {
            
             default:
                 
-    }
-        
-    }
-    }
-  //  }
+    } // End of Switch Choice    
+    } // End of While Statement
+    } // End of Public Static Voide
+    
     private static void printData(String username, String password) throws ClassNotFoundException, SQLException {
      Connection con = null;
      //PreparedStatement ps = null;
@@ -290,23 +246,20 @@ public class Main {
          //rs = ps.executeQuery();
          
        //need code for error upon login 
-         
-         
-         
-         
+  
          Statement st = con.createStatement();
          ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
          while (rs.next()) {
              System.out.println(rs.getString("DoctorID"));
-         }
-    } catch (Exception e) {
-        System.out.println("An error occurred");
-         //if (rs != null)
-           //  rs.close();
-         //ps.close();
-         //con.close();
-     }
-                     
+        } // End of while statement
+        } // End of try statement
+        catch (Exception e) {
+            System.out.println("An error occurred");
+             //if (rs != null)
+               //  rs.close();
+             //ps.close();
+             //con.close();
+     } // End of Catch Statement        
      
         //this will create a connection to the database
 //        try {
@@ -367,16 +320,6 @@ public class Main {
 //       // }
 //        catch(Exception e) {
 //            e.printStackTrace();
-//    }
-
-                    
-                    }
-                    
-                    }
-        
-          
-        
-        
-        
-    
-
+//    }      
+} // End of private static void
+} //End of Main
