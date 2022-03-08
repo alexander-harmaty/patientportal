@@ -1,61 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Patient Portal Capstone Project
+ * BCS 430W - Mary Villani;
+ * @Authors: Alexander Harmaty, Yasin Khan, Brian Noss, 
+ * Christopher Scheer, Angela Todaro
  */
 package com.groupfour.patientportal;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-/**
- *
- * @author Angie
- */
-        
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 import java.sql.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
-
-/**
- *
- * @author Angie
- */
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException { 
         
-       String user = "pportal";
-       String pwd = "admin";
-        Scanner scan = new Scanner(System.in);
+       String user = "pportal"; //database login user
+       String pwd = "admin";    //database login password
+       Scanner scan = new Scanner(System.in);
 
-
-        //int number = 0;
         boolean run = true;
         while (run) {
         //create while loop so menu keeps displaying 
@@ -65,14 +24,12 @@ public class Main {
         System.out.println("\t2 - View Doctor Personal Information");
         System.out.println("\t3 - Insert/Update Patient Personal Information");
         System.out.println("\t4 - Insert/Update Doctor Personal Information");
-        System.out.println("\t5 - Quit the Menu");
+        System.out.println("\t5 - Quit the Application");
         System.out.println("Enter your choice: ");
         int choice = scan.nextInt();
         switch (choice) {
             
-            case 1:
-                
-                    
+            case 1: //View Patient Personal Information
                     try {
                         System.out.println("Please enter your Patient ID: ");
                     String PatientID = scan.next();
@@ -94,13 +51,11 @@ public class Main {
                         }
                         //return;
                     }
-                    
                     catch (Exception e) {
                     }
-
                 break;
-            case 2:
                 
+            case 2: //View Doctor Personal Information
                     System.out.println("Please enter your Doctor ID: ");
                     String DocID = scan.next();
                     try {
@@ -119,14 +74,13 @@ public class Main {
                             System.out.println(rs.getString("Specialty"));
 
                             //displays data. there must be a simpler way to implement
-                        }
-                        
-                    }
+                        } // End of while statement
+                    } // End of try statement
                     catch (Exception e) {
-                    }
-
+                    } // End of catch
                         break;
-            case 3:
+                        
+            case 3: //Insert/Update Patient Personal Information
                 System.out.println("Enter PatientID:  ");
                 int patientid = scan.nextInt(); //trying int
                 scan.nextLine();
@@ -157,20 +111,15 @@ public class Main {
                 st.setString(5, pemail);
                 st.setInt(6, insuranceid);
                 st.setString(7, insurance);
-                
                 st.executeUpdate();
-                
 
           //test
            System.out.println("Database updated successfully.");
            break;
            //while (rs.next()) {
            // System.out.println(rs.getString("DPhone"));   
-           
-       // }
-        
-                
-            case 4:    
+           // }
+            case 4: //Insert/Update Doctor Personal Information
                  System.out.println("Enter DoctorID:  ");
                 int doctorid = scan.nextInt(); //trying int
                 scan.nextLine();
@@ -206,19 +155,18 @@ public class Main {
            System.out.println("Database updated successfully.");
            break;
            
-            case 5:
+            case 5: //Quit the Application
+                System.out.println("Die.");
                 System.exit(0);
-           
             default:
                 
-    }
-        
-    }
-    }
-  //  }
+    } // End of switch statement
+    } // End of while statement
+    } // End of private static void #1
+
     private static void printData(String username, String password) throws ClassNotFoundException, SQLException {
      Connection con = null;
-     //PreparedStatement ps = null;
+    // PreparedStatement ps = null;
     // ResultSet rs = null;
      String user = "pportal";
      String pwd = "admin";
@@ -226,28 +174,19 @@ public class Main {
      try{
          con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
          PreparedStatement ps = con.prepareStatement(query);
-         
 
          Statement st = con.createStatement();
          ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
          while (rs.next()) {
              System.out.println(rs.getString("DoctorID"));
-         }
-    } catch (Exception e) {
+            }  // End of while statement
+        } // End of try statement
+     catch (Exception e) {
         System.out.println("An error occurred");
          //if (rs != null)
            //  rs.close();
          //ps.close();
          //con.close();
-     }
-
-                    }
-                    
-                    }
-        
-          
-        
-        
-        
-    
-
+        } // End of Catch statement
+} // End of private static void #2
+} //End of Main
