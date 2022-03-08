@@ -52,17 +52,7 @@ public class Main {
         
        String user = "pportal";
        String pwd = "admin";
-//        System.out.printf("Welcome to Patient Portal. \n");
         Scanner scan = new Scanner(System.in);
-//        System.out.println("Please enter username:  ");
-//        String username = scan.nextLine();
-//        System.out.println("Username: " + username);
-//        System.out.println("Please enter password:  ");
-//        String password = scan.nextLine();
-//        System.out.println("Password: " + password);
-//        //printData(username, password);
-//        
-//        System.out.println("You have logged in successfully.\n");
 
         System.out.println("\t PATIENT PORTAL MENU");
         System.out.println("\t ----------------------");
@@ -105,30 +95,7 @@ public class Main {
                     
                     catch (Exception e) {
                     }
-                    
-                    //return;
-                    
-//            case 1:
-//                 try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM PATIENT");
-//            System.out.printf("PATIENT - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("PatientID") + " ");    
-//            System.out.printf(rs.getString("PFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("PLastName") + " ");
-//            System.out.printf(rs.getString("PPhone") + " ");
-//            System.out.printf(rs.getString("PEmail") + " ");
-//            System.out.printf(rs.getString("InsuranceID") + " ");
-//            System.out.printf(rs.getString("Insurance") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
+
                 break;
             case 2:
                 
@@ -155,26 +122,7 @@ public class Main {
                     }
                     catch (Exception e) {
                     }
-//                        try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
-//            System.out.printf("DOCTOR - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("DoctorID") + " ");    
-//            System.out.printf(rs.getString("DFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("DLastName") + " ");
-//            System.out.printf(rs.getString("DPhone") + " ");
-//            System.out.printf(rs.getString("DEmail") + " ");
-//            System.out.printf(rs.getString("Degree") + " ");
-//            System.out.printf(rs.getString("Specialty") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
+
                         break;
             case 3:
                 System.out.println("Enter PatientID:  ");
@@ -210,10 +158,7 @@ public class Main {
                 
                 st.executeUpdate();
                 
-                
-            
-            
-            
+
           //test
            System.out.println("Database updated successfully.");
            break;
@@ -255,12 +200,7 @@ public class Main {
                 st.setString(7, specialty);
                 
                 st.executeUpdate();
-                
-                
-            
-            
-            
-          
+
            System.out.println("Database updated successfully.");
            break;
            
@@ -285,15 +225,7 @@ public class Main {
          con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
          PreparedStatement ps = con.prepareStatement(query);
          
-         //ps.setString(1, username);
-         //ps.setString(2, password);
-         //rs = ps.executeQuery();
-         
-       //need code for error upon login 
-         
-         
-         
-         
+
          Statement st = con.createStatement();
          ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
          while (rs.next()) {
@@ -306,70 +238,7 @@ public class Main {
          //ps.close();
          //con.close();
      }
-                     
-     
-        //this will create a connection to the database
-//        try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
-//            System.out.printf("DOCTOR - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("DoctorID") + " ");    
-//            System.out.printf(rs.getString("DFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("DLastName") + " ");
-//            System.out.printf(rs.getString("DPhone") + " ");
-//            System.out.printf(rs.getString("DEmail") + " ");
-//            System.out.printf(rs.getString("Degree") + " ");
-//            System.out.printf(rs.getString("Specialty") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
-//        
-//        try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM PATIENT");
-//            System.out.printf("PATIENT - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("PatientID") + " ");    
-//            System.out.printf(rs.getString("PFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("PLastName") + " ");
-//            System.out.printf(rs.getString("PPhone") + " ");
-//            System.out.printf(rs.getString("PEmail") + " ");
-//            System.out.printf(rs.getString("InsuranceID") + " ");
-//            System.out.printf(rs.getString("Insurance") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
-        
-//         try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            PreparedStatement st = con.prepareStatement("UPDATE DOCTOR SET DPHONE=? WHERE DoctorID=?");
-//           // ResultSet rs = st.executeQuery("UPDATE DOCTOR SET DPHONE=631-999-3488 WHERE DoctorID = 10001");
-//           st.setString(1, "800-583-3742");
-//           st.setInt(2, 10001);
-//           st.executeUpdate();
-//           System.out.println("Database updated successfully.");
-//           //while (rs.next()) {
-//           // System.out.println(rs.getString("DPhone"));   
-//}           
-//       // }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
 
-                    
                     }
                     
                     }
