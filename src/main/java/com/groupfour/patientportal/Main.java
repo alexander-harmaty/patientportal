@@ -54,7 +54,12 @@ public class Main {
        String pwd = "admin";
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("\t PATIENT PORTAL MENU");
+
+        //int number = 0;
+        boolean run = true;
+        while (run) {
+        //create while loop so menu keeps displaying 
+                System.out.println("\t PATIENT PORTAL MENU");
         System.out.println("\t ----------------------");
         System.out.println("\t1 - View Patient Personal Information");
         System.out.println("\t2 - View Doctor Personal Information");
@@ -63,11 +68,8 @@ public class Main {
         System.out.println("\t5 - Quit the Menu");
         System.out.println("Enter your choice: ");
         int choice = scan.nextInt();
-        //int number = 0;
-        boolean run = true;
-        while (run) {
-        //create while loop so menu keeps displaying    
         switch (choice) {
+            
             case 1:
                 
                     
@@ -90,7 +92,7 @@ public class Main {
                             break;
                             //displays data. there must be a simpler way to implement
                         }
-                        return;
+                        //return;
                     }
                     
                     catch (Exception e) {
