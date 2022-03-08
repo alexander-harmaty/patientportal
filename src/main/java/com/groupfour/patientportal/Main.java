@@ -25,9 +25,9 @@ public class Main
 	  System.out.println("Patient Portal UI");
           System.out.println("------------------------------------");
 	  System.out.println("What operation would you like to do?");
-	  System.out.println("\t1) View Personal Information.");
-	  System.out.println("\t2) Insert/Update Personal Information.");
-	  System.out.println("\t3) Exit UI.");
+	  System.out.println("\t1) Personal Information.");
+	  System.out.println("\t2) Information.");
+	  System.out.println("\t3) Exit.");
 	  
 	  int ans = in.nextInt();
 	  
