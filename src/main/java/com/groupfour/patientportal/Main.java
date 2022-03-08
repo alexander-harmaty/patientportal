@@ -1,86 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* Patient Portal Capstone Project
+ * BCS 430W - Mary Villani;
+ * @Authors: Alexander Harmaty, Yasin Khan, Brian Noss, 
+ * Christopher Scheer, Angela Todaro
  */
 package com.groupfour.patientportal;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-/**
- *
- * @author Angie
- */
-        
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 import java.sql.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Scanner;
-
-/**
- *
- * @author Angie
- */
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException { 
         
-       String user = "pportal";
-       String pwd = "admin";
-//        System.out.printf("Welcome to Patient Portal. \n");
-        Scanner scan = new Scanner(System.in);
-//        System.out.println("Please enter username:  ");
-//        String username = scan.nextLine();
-//        System.out.println("Username: " + username);
-//        System.out.println("Please enter password:  ");
-//        String password = scan.nextLine();
-//        System.out.println("Password: " + password);
-//        //printData(username, password);
-//        
-//        System.out.println("You have logged in successfully.\n");
+       String user = "pportal"; //database login user
+       String pwd = "admin";    //database login password
+       Scanner scan = new Scanner(System.in);
 
-        System.out.println("\t PATIENT PORTAL MENU");
+        boolean run = true;
+        while (run) {
+        //create while loop so menu keeps displaying 
+                System.out.println("\t PATIENT PORTAL MENU");
         System.out.println("\t ----------------------");
         System.out.println("\t1 - View Patient Personal Information");
         System.out.println("\t2 - View Doctor Personal Information");
         System.out.println("\t3 - Insert/Update Patient Personal Information");
         System.out.println("\t4 - Insert/Update Doctor Personal Information");
-        System.out.println("\t5 - Quit the Menu");
+        System.out.println("\t5 - Quit the Application");
         System.out.println("Enter your choice: ");
         int choice = scan.nextInt();
-        //int number = 0;
-        boolean run = true;
-        while (run) {
-        //create while loop so menu keeps displaying    
         switch (choice) {
-            case 1:
-                
-                    
+            
+            case 1: //View Patient Personal Information
                     try {
                         System.out.println("Please enter your Patient ID: ");
                     String PatientID = scan.next();
@@ -100,38 +49,13 @@ public class Main {
                             break;
                             //displays data. there must be a simpler way to implement
                         }
-                        return;
+                        //return;
                     }
-                    
                     catch (Exception e) {
                     }
-                    
-                    //return;
-                    
-//            case 1:
-//                 try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM PATIENT");
-//            System.out.printf("PATIENT - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("PatientID") + " ");    
-//            System.out.printf(rs.getString("PFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("PLastName") + " ");
-//            System.out.printf(rs.getString("PPhone") + " ");
-//            System.out.printf(rs.getString("PEmail") + " ");
-//            System.out.printf(rs.getString("InsuranceID") + " ");
-//            System.out.printf(rs.getString("Insurance") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
                 break;
-            case 2:
                 
+            case 2: //View Doctor Personal Information
                     System.out.println("Please enter your Doctor ID: ");
                     String DocID = scan.next();
                     try {
@@ -150,33 +74,13 @@ public class Main {
                             System.out.println(rs.getString("Specialty"));
 
                             //displays data. there must be a simpler way to implement
-                        }
-                        
-                    }
+                        } // End of while statement
+                    } // End of try statement
                     catch (Exception e) {
-                    }
-//                        try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
-//            System.out.printf("DOCTOR - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("DoctorID") + " ");    
-//            System.out.printf(rs.getString("DFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("DLastName") + " ");
-//            System.out.printf(rs.getString("DPhone") + " ");
-//            System.out.printf(rs.getString("DEmail") + " ");
-//            System.out.printf(rs.getString("Degree") + " ");
-//            System.out.printf(rs.getString("Specialty") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
+                    } // End of catch
                         break;
-            case 3:
+                        
+            case 3: //Insert/Update Patient Personal Information
                 System.out.println("Enter PatientID:  ");
                 int patientid = scan.nextInt(); //trying int
                 scan.nextLine();
@@ -207,23 +111,15 @@ public class Main {
                 st.setString(5, pemail);
                 st.setInt(6, insuranceid);
                 st.setString(7, insurance);
-                
                 st.executeUpdate();
-                
-                
-            
-            
-            
+
           //test
            System.out.println("Database updated successfully.");
            break;
            //while (rs.next()) {
            // System.out.println(rs.getString("DPhone"));   
-           
-       // }
-        
-                
-            case 4:    
+           // }
+            case 4: //Insert/Update Doctor Personal Information
                  System.out.println("Enter DoctorID:  ");
                 int doctorid = scan.nextInt(); //trying int
                 scan.nextLine();
@@ -255,28 +151,22 @@ public class Main {
                 st.setString(7, specialty);
                 
                 st.executeUpdate();
-                
-                
-            
-            
-            
-          
+
            System.out.println("Database updated successfully.");
            break;
            
-            case 5:
+            case 5: //Quit the Application
+                System.out.println("Die.");
                 System.exit(0);
-           
             default:
                 
-    }
-        
-    }
-    }
-  //  }
+    } // End of switch statement
+    } // End of while statement
+    } // End of private static void #1
+
     private static void printData(String username, String password) throws ClassNotFoundException, SQLException {
      Connection con = null;
-     //PreparedStatement ps = null;
+    // PreparedStatement ps = null;
     // ResultSet rs = null;
      String user = "pportal";
      String pwd = "admin";
@@ -284,99 +174,19 @@ public class Main {
      try{
          con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
          PreparedStatement ps = con.prepareStatement(query);
-         
-         //ps.setString(1, username);
-         //ps.setString(2, password);
-         //rs = ps.executeQuery();
-         
-       //need code for error upon login 
-         
-         
-         
-         
+
          Statement st = con.createStatement();
          ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
          while (rs.next()) {
              System.out.println(rs.getString("DoctorID"));
-         }
-    } catch (Exception e) {
+            }  // End of while statement
+        } // End of try statement
+     catch (Exception e) {
         System.out.println("An error occurred");
          //if (rs != null)
            //  rs.close();
          //ps.close();
          //con.close();
-     }
-                     
-     
-        //this will create a connection to the database
-//        try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR");
-//            System.out.printf("DOCTOR - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("DoctorID") + " ");    
-//            System.out.printf(rs.getString("DFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("DLastName") + " ");
-//            System.out.printf(rs.getString("DPhone") + " ");
-//            System.out.printf(rs.getString("DEmail") + " ");
-//            System.out.printf(rs.getString("Degree") + " ");
-//            System.out.printf(rs.getString("Specialty") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
-//        
-//        try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            Statement st = con.createStatement();
-//            ResultSet rs = st.executeQuery("SELECT * FROM PATIENT");
-//            System.out.printf("PATIENT - PERSONAL INFORMATION \n");
-//            while (rs.next()) {
-//            System.out.printf(rs.getString("PatientID") + " ");    
-//            System.out.printf(rs.getString("PFirstName") + " "); //gets the first column's rows.
-//            System.out.printf(rs.getString("PLastName") + " ");
-//            System.out.printf(rs.getString("PPhone") + " ");
-//            System.out.printf(rs.getString("PEmail") + " ");
-//            System.out.printf(rs.getString("InsuranceID") + " ");
-//            System.out.printf(rs.getString("Insurance") + " \n");    
-//}
-//        }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
-        
-//         try {
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
-//            
-//            PreparedStatement st = con.prepareStatement("UPDATE DOCTOR SET DPHONE=? WHERE DoctorID=?");
-//           // ResultSet rs = st.executeQuery("UPDATE DOCTOR SET DPHONE=631-999-3488 WHERE DoctorID = 10001");
-//           st.setString(1, "800-583-3742");
-//           st.setInt(2, 10001);
-//           st.executeUpdate();
-//           System.out.println("Database updated successfully.");
-//           //while (rs.next()) {
-//           // System.out.println(rs.getString("DPhone"));   
-//}           
-//       // }
-//        catch(Exception e) {
-//            e.printStackTrace();
-//    }
-
-                    
-                    }
-                    
-                    }
-        
-          
-        
-        
-        
-    
-
+        } // End of Catch statement
+} // End of private static void #2
+} //End of Main
