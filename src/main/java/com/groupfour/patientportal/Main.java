@@ -10,10 +10,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-/**
- *
- * @author Alexander
- */
+
 public class Main 
 {
   public static void main(String[] args) throws   FileNotFoundException 
@@ -23,17 +20,20 @@ public class Main
     while(run) 
     {
 	  System.out.println("Patient Portal UI");
-          System.out.println("------------------");
+          System.out.println("------------------------------------");
 	  System.out.println("What operation would you like to do?");
-	  System.out.println("\t1) View Personal Information");
-	  System.out.println("\t2) Insert/Update Personal Information");
-	  System.out.println("\t3) Exit UI");
+
+	  System.out.println("\t1) View Personal Information.");
+	  System.out.println("\t2) Insert/Update Personal Information.");
+	  System.out.println("\t3) Exit UI.");
+
+
 	  
 	  int ans = in.nextInt();
 	  
 	  switch(ans) {
 	  case(1):
-		  System.out.println("You are viewing 'Something'");     
+		  System.out.println("Printing out Patient.csv");     
      Scanner read = new Scanner(new File("patient.csv"));
      read.useDelimiter(":");
       //String inputFileName = read.nextLine();
@@ -46,10 +46,10 @@ public class Main
       read.close();
         break;
 	  case(2):
-		  System.out.println("You can insert stuff eventually");
+		  System.out.println("This Option is in development, try again.");
 	  		break;
 	  case(3):
-		  System.out.println("die");
+		  System.out.println("die, pls.");
 	  	  System.exit(0);
 	  	  	break;
    }
