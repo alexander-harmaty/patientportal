@@ -40,12 +40,12 @@ public class Main {
                         Statement st = con.createStatement();
                         ResultSet rs = st.executeQuery("SELECT * FROM PATIENT WHERE PatientID="+PatientID+";");
                         while (rs.next()) {
-                            System.out.println("PATIENTID: " + rs.getInt("PatientID"));
-                            System.out.println("FIRSTNAME: " + rs.getString("PFirstName"));
+                            System.out.println("PATIENT ID: " + rs.getInt("PatientID"));
+                            System.out.println("FIRST NAME: " + rs.getString("PFirstName"));
                             System.out.println("LAST NAME: " + rs.getString("PLastName"));
                             System.out.println("PHONE NUMBER: " + rs.getString("PPhone"));
                             System.out.println("EMAIL: " + rs.getString("PEmail"));
-                            System.out.println("INSURANCEID: " + rs.getInt("InsuranceID"));
+                            System.out.println("INSURANCE ID: " + rs.getInt("InsuranceID"));
                             System.out.println("INSURANCE COMPANY: " + rs.getString("Insurance"));
                             break;
                             //displays data. there must be a simpler way to implement
@@ -67,13 +67,13 @@ public class Main {
                         Statement st = con.createStatement();
                         ResultSet rs = st.executeQuery("SELECT * FROM DOCTOR WHERE DoctorID="+DocID+";");
                         while (rs.next()) {
-                            System.out.println(rs.getInt("DoctorID"));
-                            System.out.println(rs.getString("DFirstName"));
-                            System.out.println(rs.getString("DLastName"));
-                            System.out.println(rs.getString("DPhone"));
-                            System.out.println(rs.getString("DEmail"));
-                            System.out.println(rs.getString("Degree"));
-                            System.out.println(rs.getString("Specialty"));
+                            System.out.println("DOCTOR ID: " + rs.getInt("DoctorID"));
+                            System.out.println("FIRST NAME: " + rs.getString("DFirstName"));
+                            System.out.println("LAST NAME: " + rs.getString("DLastName"));
+                            System.out.println("PHONE NUMBER: " + rs.getString("DPhone"));
+                            System.out.println("EMAIL: " + rs.getString("DEmail"));
+                            System.out.println("DEGREE: " + rs.getString("Degree"));
+                            System.out.println("SPECIALTY: " + rs.getString("Specialty"));
 
                             //displays data. there must be a simpler way to implement
                         } // End of while statement
