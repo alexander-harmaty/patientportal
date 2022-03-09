@@ -25,7 +25,8 @@ public class Main {
         System.out.println("\t3 - Insert/Update Patient Personal Information");
         System.out.println("\t4 - Insert/Update Doctor Personal Information");
         System.out.println("\t5 - Delete Patient Personal Information");
-        System.out.println("\t6 - Quit the Application");
+        System.out.println("\t6 - Delete Doctor Personal Information");
+        System.out.println("\t7 - Quit the Application");
         System.out.println("Enter your choice: ");
         int choice = scan.nextInt();
         switch (choice) {
@@ -171,7 +172,21 @@ public class Main {
                 System.out.println("Database updated successfully.");
                 break;
                 
-            case 6://Quit application
+             case 6: //Delete a patients information
+                System.out.println("Enter Doctor ID:  ");
+                patientid = scan.nextInt(); //trying int
+                scan.nextLine();
+                String sql4 = "DELETE FROM DOCTOR WHERE DoctorID=" + patientid;         
+                
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
+                st = con.prepareStatement(sql4);
+                st.executeUpdate();
+
+                System.out.println("Database updated successfully.");
+                break;
+                
+            case 7://Quit application
                 System.out.println("Die.");
                 System.exit(0);
                 break;
