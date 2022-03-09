@@ -18,13 +18,14 @@ public class Main {
         boolean run = true;
         while (run) {
         //create while loop so menu keeps displaying 
-                System.out.println("\t PATIENT PORTAL MENU");
+        System.out.println("\t PATIENT PORTAL MENU");
         System.out.println("\t ----------------------");
         System.out.println("\t1 - View Patient Personal Information");
         System.out.println("\t2 - View Doctor Personal Information");
         System.out.println("\t3 - Insert/Update Patient Personal Information");
         System.out.println("\t4 - Insert/Update Doctor Personal Information");
-        System.out.println("\t5 - Quit the Application");
+        System.out.println("\t5 - Delete Patient Personal Information");
+        System.out.println("\t6 - Quit the Application");
         System.out.println("Enter your choice: ");
         int choice = scan.nextInt();
         switch (choice) {
@@ -32,7 +33,7 @@ public class Main {
             case 1: //View Patient Personal Information
                     try {
                         System.out.println("Please enter your Patient ID: ");
-                    String PatientID = scan.next();
+                        String PatientID = scan.next();
                         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                         //cant be cipher
                         Connection con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
@@ -52,6 +53,7 @@ public class Main {
                         //return;
                     }
                     catch (Exception e) {
+                      
                     }
                 break;
                 
@@ -155,9 +157,25 @@ public class Main {
            System.out.println("Database updated successfully.");
            break;
            
-            case 5: //Quit the Application
+            case 5: //Delete a patients information
+                System.out.println("Enter PatientID:  ");
+                patientid = scan.nextInt(); //trying int
+                scan.nextLine();
+                String sql3 = "DELETE FROM PATIENT WHERE PatientID=" + patientid;         
+                
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
+                st = con.prepareStatement(sql3);
+                st.executeUpdate();
+
+                System.out.println("Database updated successfully.");
+                break;
+                
+            case 6://Quit application
                 System.out.println("Die.");
                 System.exit(0);
+                break;
+                
             default:
                 
     } // End of switch statement
