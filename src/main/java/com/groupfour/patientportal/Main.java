@@ -222,7 +222,8 @@ public class Main {
         String pwd = "admin";
         String query = "SELECT * FROM DOCTOR WHERE username = pportal AND password = admin";
         
-        try{
+        try
+        {
             con = DriverManager.getConnection("jdbc:sqlserver://24.189.211.114:1433;databaseName=PatientPortal;encrypt=true;trustServerCertificate=true;", user, pwd);
             PreparedStatement ps = con.prepareStatement(query);
 
@@ -246,3 +247,4 @@ public class Main {
     
 } //End of Main
 //Yasin
+
